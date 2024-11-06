@@ -1,14 +1,14 @@
-import { Response, NextFunction } from 'express';
+import { Response, NextFunction, Request } from 'express';
 import { auth } from '../config/firebase';
 import { AuthRequest } from '../types/types';
 
 export const authenticateUser = async (
-  req: AuthRequest,
+  req: Request,
   res: Response,
   next: NextFunction
-) => {
+): Promise<any> => {
   try {
-    const authHeader = req.headers.get('authorization');
+    const authHeader = req.headers.authorization;
     // Check if the authorization header starts with 'Bearer '
     if (!authHeader?.startsWith('Bearer ')) {
       return res.status(401).json({ message: 'Unauthorized' });
@@ -24,7 +24,7 @@ export const authenticateUser = async (
     }
 
     // Attach user data
-    req.user = {
+    (req as AuthRequest).user = {
       uid: decodedToken.uid,
       phoneNumber: decodedToken.phone_number,
     };
