@@ -1,22 +1,22 @@
-import { Request } from 'express';
+import { Request } from 'express'
 
 export interface AuthRequest extends Request {
-    user: {
-      uid: string;
-      phoneNumber: string;
-    };
-    body: UpdateProfileDTO;
+  user: {
+    uid: string
+    phoneNumber: string
+  }
+  body: UpdateProfileDTO
 }
 
 export interface UserProfile {
-    phoneNumber: string;
-    name: string;
-    email: string;
-    updatedAt: Date;
-    createdAt: Date;
+  phoneNumber: string
+  name: string
+  email: string
+  updatedAt: Date
+  createdAt: Date
 }
-  
+
 export interface UpdateProfileDTO {
-    name: string;
-    email: string;
+  name: string
+  email: string
 }

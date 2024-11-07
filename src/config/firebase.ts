@@ -1,7 +1,7 @@
-import * as admin from 'firebase-admin';
-import dotenv from 'dotenv';
+import * as admin from 'firebase-admin'
+import dotenv from 'dotenv'
 
-dotenv.config();
+dotenv.config()
 
 // Initialize Firebase Admin
 const app = admin.initializeApp({
@@ -10,9 +10,9 @@ const app = admin.initializeApp({
     privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
   }),
-});
+})
 
-export const auth = app.auth();
-export const db = app.firestore();
+export const auth = app.auth()
+export const db = app.firestore()
 
-export default app;
+export default app
