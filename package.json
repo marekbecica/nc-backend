@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "jest",
     "dev": "nodemon src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "format": "prettier --config prettier.config.js --write src/",
-    "format:check": "prettier --config prettier.config.js --check src/"
+    "format": "prettier --config prettier.config.cjs --write src/",
+    "format:check": "prettier --config prettier.config.cjs --check src/"
   },
   "jest": {
     "preset": "ts-jest",
