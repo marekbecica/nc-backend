@@ -10,7 +10,7 @@ export const userController = {
       const userDoc = await db.collection('users').doc(phoneNumber).get();
 
       if (!userDoc.exists) {
-        res.status(404).json({ message: 'Profile not found' });
+        res.status(404).json({ message: 'Profile not found, please create a new one' });
         return;
       }
 
